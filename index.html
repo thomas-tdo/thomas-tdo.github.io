@@ -1,0 +1,3187 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr Thomas Do — AI, BCI &amp; Human–Autonomy Research</title>
+<meta content="Dr Thomas Do is an AI and brain–computer interface researcher working on BCI, multimodal human-centred AI, robotics and human–autonomy teaming. Incoming Senior Lecturer at The University of Western Australia from September 2026." name="description"/>
+<!-- VERIFY: replace with your real domain once the site is live. -->
+<link href="https://thomas-tdo.github.io/" rel="canonical"/>
+<meta content="profile" property="og:type"/>
+<meta content="Dr Thomas Do — AI, BCI &amp; Human–Autonomy Research" property="og:title"/>
+<meta content="Research spanning brain–computer interfaces, multimodal human-centred AI, robotics and human–autonomy teaming." property="og:description"/>
+<meta content="https://thomas-tdo.github.io/" property="og:url"/>
+<meta content="https://thomas-tdo.github.io/assets/images/og-card.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="#173f67" name="theme-color"/>
+<link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,550;9..144,600&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>:root {
+  color-scheme: light dark;
+
+  /* —— Colour ——
+     Swap the accent here and the whole site follows.
+     Warmer alternatives if you want to move away from institutional blue:
+       Ochre    #a4661f / hover #86521a
+       Oxblood  #8a2f3b / hover #6e2530
+       Forest   #23604a / hover #1a4a39                                    */
+  --color-ink: #0f1c2e;
+  --color-ink-soft: #243447;
+  --color-muted: #5a6a7a;
+  --color-line: #d8dee6;
+  --color-surface: #f7f8fa;
+  --color-surface-alt: #eef1f5;
+  --color-elevated: #ffffff;
+  --color-header-bg: rgba(247, 248, 250, 0.92);
+  --color-header-bg-scrolled: rgba(255, 255, 255, 0.95);
+
+  /* Always literal white — text sitting on the accent or on the dark hero */
+  --color-white: #ffffff;
+
+  --color-accent: #173f67;
+  --color-accent-hover: #102f4e;
+  --color-accent-soft: rgba(23, 63, 103, 0.08);
+  --color-positive: #1f7a4d;
+
+  --color-hero-overlay: linear-gradient(
+    105deg,
+    rgba(15, 28, 46, 0.9) 0%,
+    rgba(15, 28, 46, 0.72) 42%,
+    rgba(15, 28, 46, 0.55) 100%
+  );
+
+  /* —— Typography —— */
+  --font-display: "Fraunces", "Georgia", "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: 1.0625rem;
+  --fs-md: 1.1875rem;
+  --fs-lg: 1.5rem;
+  --fs-xl: clamp(1.75rem, 2.5vw, 2.25rem);
+  --fs-2xl: clamp(2.25rem, 5vw, 3.5rem);
+  --fs-3xl: clamp(2.75rem, 6.5vw, 4.25rem);
+  --lh-tight: 1.15;
+  --lh-snug: 1.35;
+  --lh-body: 1.65;
+  --tracking-wide: 0.04em;
+
+  /* —— Spacing —— */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6.5rem;
+  --section-y: clamp(4rem, 8vw, 6.5rem);
+  --container: 72rem;
+  --container-narrow: 42rem;
+  --gutter: clamp(1.25rem, 4vw, 2rem);
+
+  /* —— UI —— */
+  --header-h: 4.25rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-pill: 999px;
+  --shadow-soft: 0 12px 40px rgba(15, 28, 46, 0.08);
+  --transition: 200ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* —— Dark mode ——
+   Only the tokens change; no component CSS is duplicated.
+   Remove this block if you want the site to stay light everywhere. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink: #e8edf4;
+    --color-ink-soft: #c3cedb;
+    --color-muted: #8fa0b3;
+    --color-line: #2a3849;
+    --color-surface: #0d151f;
+    --color-surface-alt: #16212f;
+    --color-elevated: #131d29;
+    --color-header-bg: rgba(13, 21, 31, 0.92);
+    --color-header-bg-scrolled: rgba(19, 29, 41, 0.95);
+
+    --color-accent: #7db3ea;
+    --color-accent-hover: #a6cbf2;
+    --color-accent-soft: rgba(125, 179, 234, 0.14);
+    --color-positive: #5cc48d;
+
+    --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* v16: stack Research themes vertically */
+#research .research-themes--stacked {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.25rem !important;
+}
+#research .research-themes--stacked > * {
+  width: 100%;
+}
+</style>
+<style>*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 1rem);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 550;
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-md);
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 var(--space-md);
+  text-wrap: pretty;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin: 0 0 var(--space-md);
+  padding-left: 1.25rem;
+}
+
+/* Vertical spacing only for plain content lists — not nav/grids */
+.section__intro + ul li + li,
+.skill-list li + li,
+.about__grid > div > ul li + li,
+.about__grid > div > ol li + li {
+  margin-top: var(--space-xs);
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* —— Skip link ——
+   Visually hidden until it receives keyboard focus, then it appears
+   top-left so a keyboard user can jump straight past the nav. */
+.skip-link {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  z-index: 200;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transform: translateY(-150%);
+  transition: transform var(--transition);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  color: var(--color-white);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: min(100% - (var(--gutter) * 2), var(--container));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - (var(--gutter) * 2), var(--container-narrow));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-y);
+}
+
+.section--alt {
+  background: var(--color-elevated);
+}
+
+.section__eyebrow {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.section__intro {
+  max-width: 38rem;
+  color: var(--color-muted);
+  margin-bottom: var(--space-2xl);
+}
+
+.section__footer {
+  margin-top: var(--space-2xl);
+}
+
+/* Delete this rule once every [bracketed] placeholder is filled in —
+   it is the fastest way to spot what you still owe the page. */
+.placeholder-text {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.hero .placeholder-text {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* —— Scroll reveal ——
+   Gated behind .js so the content is never hidden if the script fails
+   to load, is blocked, or the visitor is a crawler without JS. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity var(--transition-slow),
+    transform var(--transition-slow);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* —— Print ——
+   Colleagues and admissions offices do print these pages. */
+@media print {
+  .site-header,
+  .nav,
+  .hero__media,
+  .hero__overlay,
+  .hero__actions,
+  .media-placeholder,
+  .copy-btn,
+  .btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 10.5pt;
+  }
+
+  .hero {
+    min-height: 0;
+    color: #000;
+    background: #fff;
+  }
+
+  .hero h1,
+  .hero__role,
+  .hero__lede,
+  .hero__affiliation {
+    color: #000;
+  }
+
+  .section {
+    padding-block: 1rem;
+    break-inside: avoid;
+  }
+
+  .faq__answer {
+    display: block !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    word-break: break-all;
+  }
+}
+</style>
+<style>/* —— Header —— */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  background: var(--color-header-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color var(--transition),
+    background var(--transition);
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: var(--color-line);
+  background: var(--color-header-bg-scrolled);
+}
+
+.site-header__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 550;
+  color: var(--color-ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  line-height: 1.1;
+}
+
+.brand:hover {
+  color: var(--color-accent);
+}
+
+.brand span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--color-muted);
+}
+
+/* —— Hero —— */
+.hero {
+  position: relative;
+  min-height: min(88vh, 48rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-white);
+  background: #1a2a3d;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__media-placeholder {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 72% 40%, rgba(27, 79, 138, 0.4), transparent 55%),
+    linear-gradient(160deg, #152033 0%, #1f3550 45%, #0f1c2e 100%);
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-hero-overlay);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  width: min(100% - (var(--gutter) * 2), var(--container));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  padding-block: calc(var(--header-h) + 2.5rem) clamp(3rem, 7vw, 4.5rem);
+  animation: heroFade 900ms ease both;
+}
+
+.hero__content {
+  max-width: 34rem;
+}
+
+.hero__portrait {
+  width: min(100%, 18rem);
+  justify-self: start;
+}
+
+.hero__portrait .media-placeholder--portrait {
+  width: 100%;
+}
+
+.hero__portrait img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes heroFade {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__inner {
+    animation: none;
+  }
+}
+
+.hero__affiliation {
+  margin: 0 0 var(--space-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero h1 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.hero__role {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  line-height: var(--lh-snug);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__lede {
+  margin: 0 0 var(--space-xl);
+  font-size: var(--fs-md);
+  max-width: 32rem;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Balanced two-column hero from tablet up */
+@media (min-width: 800px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    padding-block: calc(var(--header-h) + 3rem) clamp(3.5rem, 8vw, 5rem);
+  }
+
+  .hero__content {
+    max-width: none;
+  }
+
+  .hero__portrait {
+    width: min(100%, 22rem);
+    max-width: 22rem;
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 20rem);
+    column-gap: clamp(3rem, 7vw, 5.5rem);
+  }
+
+  .hero__portrait {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* —— About —— */
+.about__grid {
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+@media (min-width: 800px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr);
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+}
+
+.about__meta {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line);
+}
+
+.about__meta dl {
+  margin: 0;
+}
+
+.about__meta dt {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.about__meta dd {
+  margin: var(--space-2xs) 0 var(--space-lg);
+  color: var(--color-ink-soft);
+  overflow-wrap: anywhere;
+}
+
+.about__meta dd:last-child {
+  margin-bottom: 0;
+}
+
+/* —— Research —— */
+.research__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.research__item {
+  display: grid;
+  gap: var(--space-md);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 720px) {
+  .research__item {
+    grid-template-columns: 4rem 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+}
+
+.research__index {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.research__item h3 {
+  margin-bottom: var(--space-sm);
+}
+
+/* —— Publications —— */
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-list > li,
+.research__list > li,
+.contact__details > li,
+.apply-list > li,
+.news__list > li {
+  margin-top: 0;
+}
+
+.pub-item {
+  display: grid;
+  gap: var(--space-sm);
+  padding-block: var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.pub-item:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+@media (min-width: 720px) {
+  .pub-item {
+    grid-template-columns: 4.5rem 1fr auto;
+    gap: var(--space-lg);
+    align-items: baseline;
+  }
+}
+
+.pub-item__year {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.pub-item__title {
+  margin: 0 0 var(--space-2xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: var(--lh-snug);
+}
+
+.pub-item__meta {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+/* Bold your own name in the author string so readers find you instantly */
+.pub-item__meta .self {
+  font-weight: 700;
+  color: var(--color-ink-soft);
+}
+
+.pub-item__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  font-size: var(--fs-sm);
+  align-items: baseline;
+}
+
+@media (min-width: 720px) {
+  .pub-item__links {
+    justify-content: flex-end;
+  }
+}
+
+/* —— Legacy news list styles —— */
+.news__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.news__item {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 640px) {
+  .news__item {
+    grid-template-columns: 7.5rem 1fr;
+    gap: var(--space-lg);
+    align-items: baseline;
+  }
+}
+
+.news__date {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.news__text {
+  margin: 0;
+  color: var(--color-ink-soft);
+}
+
+/* —— Group —— */
+.people {
+  list-style: none;
+  margin: 0 0 var(--space-2xl);
+  padding: 0;
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin: 0;
+}
+
+.person__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.person__name {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.person__role {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+/* —— Roster ——
+   A compact name/role list, used for the supervision record. The .people
+   photo-card grid above is not currently used by index.html — it is kept
+   for when you have a group at your next institution and want to show
+   faces rather than a list. */
+.roster {
+  list-style: none;
+  margin: 0 0 var(--space-2xl);
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.roster li {
+  display: grid;
+  gap: var(--space-2xs);
+  padding-block: var(--space-sm);
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 640px) {
+  .roster li {
+    grid-template-columns: minmax(0, 15rem) 1fr;
+    gap: var(--space-lg);
+    align-items: baseline;
+  }
+}
+
+.roster__name {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.roster__detail {
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+
+.roster--compact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  margin-bottom: var(--space-xl);
+  border-top: 0;
+}
+
+.roster--compact li {
+  grid-template-columns: minmax(0, 10.5rem) 1fr;
+  gap: var(--space-sm);
+  padding-block: 0.55rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.roster-group__title {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  font-size: var(--fs-md);
+}
+
+@media (max-width: 760px) {
+  .roster--compact {
+    grid-template-columns: 1fr;
+  }
+  .roster--compact li {
+    grid-template-columns: minmax(0, 9rem) 1fr;
+  }
+}
+
+/* —— Funding figures —— */
+.stats {
+  display: grid;
+  gap: var(--space-md);
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+}
+
+.stat {
+  padding: var(--space-md) 0 0;
+  border-top: 2px solid var(--color-accent);
+}
+
+.stat dt {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.stat dd {
+  margin: var(--space-2xs) 0 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 550;
+  color: var(--color-ink);
+}
+
+/* —— Join —— */
+.join__status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--color-elevated);
+  border-left: 4px solid var(--color-positive);
+  box-shadow: var(--shadow-soft);
+}
+
+.join__status-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-positive);
+}
+
+.join__status-label::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-positive);
+}
+
+.join__status-text {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.join__deadlines {
+  display: grid;
+  gap: var(--space-md);
+  margin-bottom: var(--space-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+}
+
+.join__deadline {
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-elevated);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+}
+
+.join__deadline dt {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.join__deadline dd {
+  margin: var(--space-2xs) 0 0;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.join__columns {
+  display: grid;
+  gap: var(--space-3xl);
+}
+
+@media (min-width: 860px) {
+  .join__columns {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+}
+
+.join__columns--single {
+  grid-template-columns: 1fr !important;
+  max-width: 760px;
+  gap: var(--space-xl);
+}
+
+.join__block h3 {
+  margin-bottom: var(--space-md);
+}
+
+.join__block + .join__block {
+  margin-top: var(--space-2xl);
+}
+
+.apply-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: apply;
+}
+
+.apply-list li {
+  position: relative;
+  padding: var(--space-md) 0 var(--space-md) 2.75rem;
+  border-bottom: 1px solid var(--color-line);
+  counter-increment: apply;
+}
+
+.apply-list li::before {
+  content: counter(apply);
+  position: absolute;
+  left: 0;
+  top: var(--space-md);
+  width: 1.75rem;
+  height: 1.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.apply-note {
+  margin-top: var(--space-lg);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+/* —— Contact —— */
+.contact__grid {
+  display: grid;
+  gap: var(--space-2xl);
+}
+
+@media (min-width: 720px) {
+  .contact__grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--space-3xl);
+  }
+}
+
+.contact__details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact__details li {
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.contact__details li:first-child {
+  border-top: 1px solid var(--color-line);
+}
+
+.contact__label {
+  display: block;
+  margin-bottom: var(--space-2xs);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.contact__email-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.contact__links a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact__links a:hover {
+  text-decoration: underline;
+}
+
+/* —— Footer —— */
+.site-footer {
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-elevated);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+
+/* —— Research-profile v4 additions —— */
+.hero__research-card {
+  width: min(100%, 27rem);
+  justify-self: end;
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.85rem;
+  background: rgba(8, 22, 38, 0.50);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(12px);
+}
+
+.hero__research-card .section__eyebrow {
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: var(--space-md);
+}
+
+.hero__research-card h2 {
+  margin-bottom: var(--space-lg);
+  font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+  color: var(--color-white);
+}
+
+.hero-focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-focus-list li {
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.hero-focus-list strong {
+  display: block;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.hero__research-thread {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,.15);
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,.72);
+}
+
+.research-trajectory {
+  margin-top: var(--space-2xl);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: 0.85rem;
+  background: var(--color-elevated);
+}
+
+.research-trajectory__head {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.research-trajectory__head p {
+  max-width: 48rem;
+  color: var(--color-muted);
+}
+
+.trajectory-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  counter-reset: trajectory;
+}
+
+.trajectory-step {
+  position: relative;
+  padding: 1.15rem 1rem 1.15rem 3.4rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.trajectory-step:first-child { border-top: 0; }
+
+.trajectory-step::before {
+  counter-increment: trajectory;
+  content: counter(trajectory, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.08rem;
+  width: 2.45rem;
+  height: 2.45rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.trajectory-step h3 {
+  margin-bottom: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.trajectory-step p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+@media (min-width: 820px) {
+  .trajectory-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .trajectory-step {
+    padding: 3.8rem 1.15rem 0.2rem;
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+
+  .trajectory-step:first-child { border-left: 0; }
+
+  .trajectory-step::before {
+    top: 0;
+    left: 1.15rem;
+  }
+}
+
+.research-principles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.research-principle {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line);
+}
+
+.research-principle strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-ink);
+}
+
+.research-principle span {
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 760px) {
+  .research-principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* —— Recruitment-focused 2026 refresh —— */
+.hero__opportunity-card {
+  width: min(100%, 29rem);
+  justify-self: start;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.85rem;
+  background: rgba(8, 22, 38, 0.58);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(12px);
+}
+
+.hero__microcopy {
+  margin: var(--space-md) 0 0;
+  font-size: var(--fs-sm);
+  color: rgba(255, 255, 255, 0.68);
+}
+
+@media (min-width: 800px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.12fr) minmax(20rem, 0.88fr);
+  }
+
+  .hero__opportunity-card {
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1100px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 27rem);
+  }
+}
+
+.section__intro--wide {
+  max-width: 52rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 760px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card--wide {
+    grid-column: 1 / -1;
+  }
+}
+
+.research-fit {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-line);
+}
+
+@media (min-width: 760px) {
+  .research-fit {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+.funding-grid,
+.candidate-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 820px) {
+  .funding-grid,
+  .candidate-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.deadline-banner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) var(--space-xl);
+  border-top: 1px solid var(--color-line);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.application-panel {
+  position: sticky;
+  top: calc(var(--header-h) + var(--space-lg));
+}
+</style>
+<style>/* —— Navigation —— */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.nav__list li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav__list a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
+  padding: 0 var(--space-sm);
+  line-height: 1;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+}
+
+.nav__list a:hover {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* Set by main.js as the reader scrolls — tells them where they are */
+.nav__list a[aria-current="location"] {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.nav__cta {
+  margin-left: var(--space-xs);
+}
+
+.nav__cta a,
+.nav__cta a[aria-current="location"] {
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding-inline: var(--space-md);
+}
+
+.nav__cta a:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-white);
+}
+
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-elevated);
+  cursor: pointer;
+}
+
+.nav__toggle-bars,
+.nav__toggle-bars::before,
+.nav__toggle-bars::after {
+  display: block;
+  width: 1.1rem;
+  height: 2px;
+  background: var(--color-ink);
+  border-radius: 1px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav__toggle-bars {
+  position: relative;
+}
+
+.nav__toggle-bars::before,
+.nav__toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav__toggle-bars::before {
+  top: -6px;
+}
+
+.nav__toggle-bars::after {
+  top: 6px;
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars {
+  background: transparent;
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav__toggle[aria-expanded="true"] .nav__toggle-bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Breakpoint raised from 880px: the nav now carries seven items */
+@media (max-width: 1023.98px) {
+  .nav.is-open .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+    padding: var(--space-md) var(--gutter) var(--space-lg);
+    background: var(--color-elevated);
+    border-bottom: 1px solid var(--color-line);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .nav.is-open .nav__list a {
+    min-height: 2.75rem;
+    justify-content: flex-start;
+    padding: 0 var(--space-md);
+  }
+
+  .nav.is-open .nav__cta {
+    margin-left: 0;
+    margin-top: var(--space-xs);
+  }
+
+  .nav.is-open .nav__cta a {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+}
+
+/* —— Buttons —— */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 2.75rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-white);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn--outline:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+}
+
+/* —— Copy-to-clipboard —— */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.copy-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.copy-btn.is-copied {
+  color: var(--color-positive);
+  border-color: var(--color-positive);
+}
+
+/* —— Tags —— */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: var(--space-md) 0 0;
+  padding: 0;
+}
+
+.tag-list li {
+  margin: 0;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.tag--venue {
+  background: transparent;
+  border: 1px solid var(--color-line);
+  color: var(--color-muted);
+}
+
+/* —— Callout ——
+   Used for the "not a good fit" honesty block. */
+.callout {
+  padding: var(--space-lg);
+  border: 1px solid var(--color-line);
+  border-left: 3px solid var(--color-muted);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+  font-size: var(--fs-sm);
+  color: var(--color-ink-soft);
+}
+
+.callout h3 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--space-xs);
+}
+
+.callout ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+/* —— BibTeX disclosure —— */
+.bibtex {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-xs);
+}
+
+.bibtex summary {
+  cursor: pointer;
+  color: var(--color-muted);
+  font-weight: 600;
+  list-style: none;
+}
+
+.bibtex summary::-webkit-details-marker {
+  display: none;
+}
+
+.bibtex summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform var(--transition);
+}
+
+.bibtex[open] summary::before {
+  content: "▾ ";
+}
+
+.bibtex pre {
+  margin: var(--space-xs) 0 0;
+  padding: var(--space-md);
+  overflow-x: auto;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* —— Media placeholders ——
+   Delete a placeholder entirely once you drop the real asset in. */
+.media-placeholder {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 12rem;
+  padding: var(--space-lg);
+  border: 1.5px dashed rgba(255, 255, 255, 0.45);
+  background: rgba(15, 28, 46, 0.2);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.media-placeholder--light {
+  border-color: var(--color-line);
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  min-height: 14rem;
+}
+
+.media-placeholder--portrait {
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+}
+
+.media-placeholder--square {
+  aspect-ratio: 1;
+  min-height: 0;
+}
+
+.media-placeholder__label {
+  margin: 0;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: var(--lh-snug);
+  max-width: 16rem;
+}
+
+.media-placeholder__hint {
+  margin: var(--space-xs) 0 0;
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* —— FAQ accordion —— */
+.faq {
+  border-top: 1px solid var(--color-line);
+}
+
+.faq__item {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  border: 0;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  text-align: left;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--color-accent);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.faq__icon::before {
+  width: 100%;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.faq__icon::after {
+  width: 2px;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.faq__question[aria-expanded="true"] .faq__icon::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+  opacity: 0;
+}
+
+.faq__answer {
+  display: none;
+  padding: 0 0 var(--space-md);
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+}
+
+.faq__answer.is-open {
+  display: block;
+}
+
+.faq__answer p {
+  margin: 0;
+}
+
+/* —— Skills list —— */
+.skill-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-ink-soft);
+}
+
+.skill-list li::marker {
+  color: var(--color-accent);
+}
+
+
+/* —— Research-profile v4 additions —— */
+.hero__research-card {
+  width: min(100%, 27rem);
+  justify-self: end;
+  padding: clamp(1.4rem, 3vw, 1.9rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 0.85rem;
+  background: rgba(8, 22, 38, 0.50);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(12px);
+}
+
+.hero__research-card .section__eyebrow {
+  color: rgba(255, 255, 255, 0.68);
+  margin-bottom: var(--space-md);
+}
+
+.hero__research-card h2 {
+  margin-bottom: var(--space-lg);
+  font-size: clamp(1.45rem, 2.4vw, 1.95rem);
+  color: var(--color-white);
+}
+
+.hero-focus-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-focus-list li {
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  color: rgba(255, 255, 255, 0.90);
+}
+
+.hero-focus-list strong {
+  display: block;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.hero__research-thread {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255,255,255,.15);
+  font-size: var(--fs-sm);
+  color: rgba(255,255,255,.72);
+}
+
+.research-trajectory {
+  margin-top: var(--space-2xl);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: 0.85rem;
+  background: var(--color-elevated);
+}
+
+.research-trajectory__head {
+  display: grid;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.research-trajectory__head p {
+  max-width: 48rem;
+  color: var(--color-muted);
+}
+
+.trajectory-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  counter-reset: trajectory;
+}
+
+.trajectory-step {
+  position: relative;
+  padding: 1.15rem 1rem 1.15rem 3.4rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.trajectory-step:first-child { border-top: 0; }
+
+.trajectory-step::before {
+  counter-increment: trajectory;
+  content: counter(trajectory, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 1.08rem;
+  width: 2.45rem;
+  height: 2.45rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+
+.trajectory-step h3 {
+  margin-bottom: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.trajectory-step p {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--color-muted);
+}
+
+@media (min-width: 820px) {
+  .trajectory-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .trajectory-step {
+    padding: 3.8rem 1.15rem 0.2rem;
+    border-top: 0;
+    border-left: 1px solid var(--color-line);
+  }
+
+  .trajectory-step:first-child { border-left: 0; }
+
+  .trajectory-step::before {
+    top: 0;
+    left: 1.15rem;
+  }
+}
+
+.research-principles {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.research-principle {
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-line);
+}
+
+.research-principle strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-ink);
+}
+
+.research-principle span {
+  color: var(--color-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 760px) {
+  .research-principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* —— Recruitment-focused 2026 refresh —— */
+.opportunity-card__eyebrow,
+.application-panel__eyebrow,
+.candidate-card__label,
+.deadline-banner__label,
+.transition-note__label,
+.funding-card__badge {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.opportunity-card__eyebrow {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.hero__opportunity-card h2 {
+  margin: var(--space-sm) 0 var(--space-lg);
+  color: var(--color-white);
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  line-height: 1.15;
+}
+
+.opportunity-card__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.opportunity-card__list li {
+  margin: 0;
+  padding: var(--space-sm) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.opportunity-card__list li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.opportunity-card__list strong {
+  color: var(--color-white);
+}
+
+.opportunity-card__link {
+  display: inline-block;
+  margin-top: var(--space-lg);
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.opportunity-card__link:hover {
+  text-decoration: underline;
+}
+
+.transition-note {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+}
+
+.transition-note__label,
+.candidate-card__label,
+.deadline-banner__label,
+.application-panel__eyebrow,
+.funding-card__badge {
+  color: var(--color-accent);
+}
+
+.transition-note p {
+  margin: var(--space-xs) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--color-ink-soft);
+}
+
+.project-card {
+  position: relative;
+  min-height: 100%;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  background: var(--color-elevated);
+  box-shadow: 0 8px 28px rgba(15, 28, 46, 0.045);
+}
+
+.project-card__number {
+  display: block;
+  margin-bottom: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--color-accent);
+}
+
+.project-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.project-card p {
+  color: var(--color-ink-soft);
+}
+
+.project-card__prompt {
+  font-size: var(--fs-sm);
+  color: var(--color-muted) !important;
+}
+
+.research-fit h3 {
+  margin: 0;
+}
+
+.research-fit p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.funding-card,
+.candidate-card,
+.application-panel {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+  background: var(--color-elevated);
+}
+
+.funding-card--featured {
+  border-top: 4px solid var(--color-accent);
+}
+
+.funding-card__topline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.funding-card h3,
+.candidate-card h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--color-positive);
+}
+
+.status-dot::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--color-positive);
+}
+
+.funding-card__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0;
+}
+
+.funding-card__facts div {
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-line);
+}
+
+.funding-card__facts dt {
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+
+.funding-card__facts dd {
+  margin: var(--space-2xs) 0 0;
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.funding-card__list,
+.check-list {
+  margin: var(--space-md) 0 var(--space-lg);
+  padding-left: 1.15rem;
+}
+
+.funding-card__list li,
+.check-list li {
+  margin-bottom: var(--space-sm);
+}
+
+.text-link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.deadline-banner strong {
+  display: block;
+  margin-top: var(--space-2xs);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
+
+.fine-print {
+  max-width: 58rem;
+  margin: var(--space-md) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--color-muted);
+}
+
+.candidate-grid {
+  margin-bottom: var(--space-3xl);
+}
+
+.candidate-card--soft {
+  background: var(--color-accent-soft);
+}
+
+.check-list li::marker,
+.funding-card__list li::marker {
+  color: var(--color-accent);
+}
+
+.application-panel {
+  border-top: 4px solid var(--color-accent);
+  box-shadow: var(--shadow-soft);
+}
+
+.application-panel__subject {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-sm);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: var(--fs-sm);
+  color: var(--color-ink);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 639px) {
+  .funding-card__facts {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+.news-item {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+.news-item__date {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.news-item h3 { margin-top: 0; }
+.news-item p { margin-bottom: 0; }
+@media (max-width: 760px) {
+  .news-grid { grid-template-columns: 1fr; }
+}
+
+/* —— Research highlight —— */
+.research-highlight__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+  align-items: center;
+  margin-top: var(--space-lg);
+}
+
+.research-highlight__copy h2 {
+  margin-top: 0;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #000;
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 16 / 9;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* —— Recent activities —— */
+.activity-list {
+  list-style: none;
+  margin: var(--space-xl) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.activity-item {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: var(--space-lg);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+  align-items: baseline;
+}
+
+.activity-item__year {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-muted);
+}
+
+.activity-item p {
+  margin: 0;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .research-highlight__grid {
+    grid-template-columns: 1fr;
+  }
+  .activity-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xs);
+  }
+}
+
+.application-panel__note {
+  margin-top: var(--space-md);
+}
+</style>
+<script>
+      document.documentElement.classList.replace("no-js", "js");
+    </script>
+<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Thomas Do",
+        "alternateName": "Tien-Thong Nguyen Do",
+        "jobTitle": "Senior Lecturer",
+        "url": "https://thomas-tdo.github.io/",
+        "description": "AI and brain–computer interface researcher joining The University of Western Australia in Sep 2026.",
+        "affiliation": [
+          {
+            "@type": "Organization",
+            "name": "University of Technology Sydney"
+          }
+        ],
+        "alumniOf": [
+          { "@type": "Organization", "name": "University of Technology Sydney" },
+          { "@type": "Organization", "name": "Korea Institute of Science and Technology" },
+          { "@type": "Organization", "name": "Ho Chi Minh City University of Technology" }
+        ],
+        "knowsAbout": [
+          "Brain-computer interfaces",
+          "Human-centred artificial intelligence",
+          "Multimodal foundation models",
+          "Human-robot teaming",
+          "Shared autonomy",
+          "Wearable sensing"
+        ],
+        "sameAs": [
+          "https://scholar.google.com/citations?user=8_nErXAAAAAJ",
+          "https://www.researchgate.net/profile/Tien_Thong_Do",
+          "https://profiles.uts.edu.au/Thomas.Do"
+        ]
+      }
+    </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+<div class="container site-header__inner">
+<a class="brand" href="#top">
+          Thomas Do
+          <span>AI · Brain–Computer Interfaces · Human–Autonomy</span>
+</a>
+<nav aria-label="Primary" class="nav">
+<button aria-controls="primary-nav" aria-expanded="false" class="nav__toggle" type="button">
+<span class="sr-only">Menu</span>
+<span aria-hidden="true" class="nav__toggle-bars"></span>
+</button>
+<ul class="nav__list" id="primary-nav">
+<li><a href="#about">About</a></li>
+<li><a href="#research">Research</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#activities">Recent activities</a></li>
+<li><a href="#supervision">Students</a></li>
+<li class="nav__cta"><a href="#phd-opportunities">PhD opportunities</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<!-- ============================ HERO ============================ -->
+<section aria-labelledby="hero-title" class="hero">
+<div aria-hidden="true" class="hero__media"><div class="hero__media-placeholder"></div></div>
+<div aria-hidden="true" class="hero__overlay"></div>
+<div class="container hero__inner">
+<div class="hero__content">
+<h1 id="hero-title">Dr Thomas Do</h1>
+<p class="hero__role">AI · Brain–Computer Interfaces · Human–Autonomy</p>
+<p class="hero__lede">
+        I develop intelligent systems that understand and collaborate with people by learning from neural, physiological, behavioural and environmental signals. My research connects brain–computer interfaces, multimodal AI and autonomous systems, with an emphasis on robust technologies that can operate beyond controlled laboratory settings.
+      </p>
+<div class="hero__actions">
+<a class="btn btn--primary" href="#research">Explore my research</a>
+<a class="btn btn--ghost" href="#publications">Selected publications</a>
+<a class="btn btn--ghost" href="#phd-opportunities">Prospective students</a>
+</div>
+<p class="hero__microcopy">Incoming Senior Lecturer (September 2026) · Computer Science and Software Engineering · UWA</p>
+</div>
+<aside aria-label="Research at a glance" class="hero__research-card">
+<span class="section__eyebrow">Research at a glance</span>
+<h2>Understanding people. Building adaptive intelligent systems.</h2>
+<ul class="hero-focus-list">
+<li><strong>Brain–Computer Interfaces</strong> Brain and physiological signals for human–machine interaction</li>
+<li><strong>Human-centred AI</strong> Multimodal learning from people, behaviour and context</li>
+<li><strong>Human–Autonomy</strong> Adaptive interaction between humans, robots and AI systems</li>
+</ul>
+<p class="hero__research-thread"><strong>Unifying thread:</strong> sensing → learning → interaction → real-world deployment.</p>
+</aside>
+</div>
+</section>
+<!-- ============================ ABOUT ============================ -->
+<section aria-labelledby="about-title" class="section section--alt" id="about">
+<div class="container about__grid reveal">
+<div>
+<span class="section__eyebrow">About</span>
+<h2 id="about-title">Researching intelligent systems that work with people</h2>
+<p class="section__intro section__intro--wide">
+        From Sep 2026 I will join Computer Science and Software Engineering at The University of Western Australia.
+      </p>
+<p>
+        My research sits at the intersection of artificial intelligence, brain–computer interfaces and robotics. I develop computational methods that learn from neural, physiological, behavioural and contextual signals to infer human state and intent, enabling more adaptive and reliable interaction between people and intelligent systems.
+      </p>
+<p>
+        A recurring theme across my work is <strong>translation from algorithms to real systems</strong>. I combine brain and physiological information processing, multimodal and deep learning, wearable sensing, human–robot interaction and adaptive autonomy with experimental validation and system integration. The aim is not only to improve model performance, but to build intelligent technologies that remain useful across people, tasks and real-world environments.
+      </p>
+</div>
+<aside aria-label="Research profile" class="about__meta">
+<dl>
+<dt>Research themes</dt>
+<dd>Brain–computer interfaces · Human-centred AI · Multimodal learning · Human–robot interaction · Shared autonomy</dd>
+<dt>Methods</dt>
+<dd>Brain information processing · Deep learning · Foundation models · Representation learning · Reinforcement learning · Wearable sensing</dd>
+<dt>Application settings</dt>
+<dd>Human–AI collaboration · Assistive and adaptive systems · Robotics · BCI · Real-world intelligent systems</dd>
+<dt>Current role</dt>
+<dd>Senior Lecturer, UTS · Co-Director, Human-centric AI Centre</dd>
+<dt>From Sep 2026</dt>
+<dd>Senior Lecturer, Computer Science and Software Engineering · UWA</dd>
+<dt>Google Scholar</dt>
+<dd><a href="https://scholar.google.com/citations?user=8_nErXAAAAAJ">View publications and citations</a></dd>
+</dl>
+</aside>
+</div>
+</section>
+<!-- ============================ RESEARCH ============================ -->
+<section aria-labelledby="research-title" class="section" id="research">
+<div class="container reveal">
+<span class="section__eyebrow">Research</span>
+<h2 id="research-title">Research themes</h2>
+<p class="section__intro section__intro--wide">
+      My work brings together sensing, learning and autonomous decision-making to create systems that can better understand people and collaborate with them. Three broad themes connect my current and future research.
+    </p>
+<div class="project-grid research-themes--stacked">
+<article class="project-card">
+<span class="project-card__number">01</span>
+<h3>Brain–Computer Interfaces</h3>
+<p>I develop non-invasive approaches for extracting useful information from brain and physiological signals, with particular interest in robust brain information processing, wearable sensing and practical brain–computer interaction.</p>
+<ul class="tag-list"><li><span class="tag">Brain information</span></li><li><span class="tag">BCI</span></li><li><span class="tag">Wearable sensing</span></li></ul>
+</article>
+<article class="project-card">
+<span class="project-card__number">02</span>
+<h3>Human-centred &amp; Multimodal AI</h3>
+<p>I investigate AI models that learn from multiple sources of human and contextual information, aiming for systems that are personalised, adaptive, data-efficient and robust to the variability found in real-world human data.</p>
+<ul class="tag-list"><li><span class="tag">Multimodal learning</span></li><li><span class="tag">Deep learning</span></li><li><span class="tag">Human-centred AI</span></li></ul>
+</article>
+<article class="project-card">
+<span class="project-card__number">03</span>
+<h3>Human–Autonomy &amp; Intelligent Robotics</h3>
+<p>I study how humans and autonomous systems can share information, decisions and control. This includes human–robot teaming, adaptive autonomy, cognitive-aware interaction and intelligent systems designed for complex operational environments.</p>
+<ul class="tag-list"><li><span class="tag">Robotics</span></li><li><span class="tag">Shared autonomy</span></li><li><span class="tag">Human–AI teaming</span></li></ul>
+</article>
+</div>
+<div class="research-trajectory">
+<div class="research-trajectory__head">
+<div>
+<span class="section__eyebrow">Research trajectory</span>
+<h3>From human signals to deployable intelligence</h3>
+</div>
+<p>My research follows a consistent pathway: understand informative signals from people, learn robust representations, turn those representations into adaptive interaction, and validate the resulting systems beyond controlled laboratory conditions.</p>
+</div>
+<div aria-label="Research pathway" class="trajectory-grid">
+<div class="trajectory-step"><h3>Human signals</h3><p>Neural, physiological, behavioural and contextual sensing.</p></div>
+<div class="trajectory-step"><h3>Learning &amp; representation</h3><p>Signal processing, multimodal learning and robust AI models.</p></div>
+<div class="trajectory-step"><h3>Adaptive intelligence</h3><p>Inference of human state and intent to support interaction and decision-making.</p></div>
+<div class="trajectory-step"><h3>Integrated systems</h3><p>BCI, human–AI and robotic systems evaluated in realistic settings.</p></div>
+</div>
+<div class="research-principles">
+<div class="research-principle"><strong>Generalisation</strong><span>Methods that remain reliable across people, sessions, tasks and environments.</span></div>
+<div class="research-principle"><strong>Human-centred evaluation</strong><span>Performance measured together with usability, trust, workload and interaction quality.</span></div>
+<div class="research-principle"><strong>Translation</strong><span>Research designed with deployment constraints and real-world integration in mind.</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ RESEARCH HIGHLIGHT ============================ -->
+<section aria-labelledby="highlight-title" class="section section--alt research-highlight" id="highlight">
+<div class="container reveal">
+<span class="section__eyebrow">Research highlight</span>
+<div class="research-highlight__grid">
+<div class="research-highlight__copy">
+<h2 id="highlight-title">Brain–Robot Interaction: from signals to integrated systems</h2>
+<p class="section__intro section__intro--wide">
+      A long-running Defence research program brought together brain–computer interfaces, AI, augmented-reality interfaces and robotic platforms. My role focused on technical integration and translation across sensing, algorithms, software and robotics, culminating in multi-user and multi-robot demonstrations.
+    </p>
+<p>
+      The project illustrates a recurring focus in my research: moving beyond offline algorithms to build and evaluate complete human–AI systems in realistic operational settings.
+    </p>
+<a class="btn btn--outline" href="https://www.youtube.com/watch?v=hs8hjdoSKNQ" rel="noopener" target="_blank">Watch on YouTube</a>
+</div>
+<div class="research-highlight__video">
+<div class="video-frame">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/hs8hjdoSKNQ" title="Brain–Robot Interaction project video"></iframe>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ PUBLICATIONS ============================
+           All links converted from the UTS ezproxy URLs in your CV to public
+           URLs, so readers outside UTS can open them.
+           ====================================================================== -->
+<section aria-labelledby="publications-title" class="section section--alt" id="publications">
+<div class="container reveal">
+<span class="section__eyebrow">Publications</span>
+<h2 id="publications-title">Selected work</h2>
+<p class="section__intro">
+            A selection; the full list is on
+            <a href="https://scholar.google.com/citations?user=8_nErXAAAAAJ">Google Scholar</a>. An asterisk marks corresponding authorship.
+          </p>
+<ul class="pub-list">
+<li class="pub-item">
+<span class="pub-item__year">2026</span>
+<div>
+<h3 class="pub-item__title">
+                  Neuro-Cognitive Reward Modeling for Human-Centered Autonomous
+                  Vehicle Control
+                </h3>
+<p class="pub-item__meta">
+                  Z. Zhuang, F. Chang, Y.-K. Wang, <span class="self">T. Do</span>,
+                  C.-T. Lin. <em>CVPR</em>.
+                </p>
+<ul class="tag-list">
+<li><span class="tag tag--venue">CORE A*</span></li>
+</ul>
+</div>
+<div class="pub-item__links">
+<!-- No link in the CV — add the DOI or arXiv page once it is up. -->
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2025</span>
+<div>
+<h3 class="pub-item__title">
+                  Pretraining Large Brain Language Model for Active BCI: Silent
+                  Speech
+                </h3>
+<p class="pub-item__meta">
+                  J. Zhou, Z. Cao, … <span class="self">T. Do</span>*, …
+                  <em>ACM Multimedia</em>.
+                </p>
+<ul class="tag-list">
+<li><span class="tag tag--venue">CORE A*</span></li>
+</ul>
+</div>
+<div class="pub-item__links">
+<a href="https://dl.acm.org/doi/10.1145/3746027.3754810">DOI</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2025</span>
+<div>
+<h3 class="pub-item__title">
+                  Edge AI–Brain-Computer Interfaces System
+                </h3>
+<p class="pub-item__meta">
+                  M. D. Nguyen, <span class="self">T. Do</span>*, X. T. Tran,
+                  Q. T. Nguyen, C.-T. Lin.
+                  <em>IEEE Transactions on Neural Systems and Rehabilitation
+                    Engineering</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/abstract/document/11197031/">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2025</span>
+<div>
+<h3 class="pub-item__title">
+                  iFuzzyTL: Interpretable Fuzzy Transfer Learning for
+                  Steady-State Visual Evoked Potentials Brain–Computer
+                  Interfaces
+                </h3>
+<p class="pub-item__meta">
+                  X. Jiang, B. Cao, L. Ou, Y.-C. Chang,
+                  <span class="self">T. Do</span>, C.-T. Lin.
+                  <em>IEEE Transactions on Systems, Man, and Cybernetics:
+                    Systems</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/abstract/document/11205327">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2025</span>
+<div>
+<h3 class="pub-item__title">
+                  AEGIS: Human Attention-based Explainable Guidance for
+                  Intelligent Vehicle Systems
+                </h3>
+<p class="pub-item__meta">
+                  Z. Zhuang, C.-Y. Lu, F. Chang, Y.-K. Wang,
+                  <span class="self">T. Do</span>, C.-T. Lin. <em>ACM CHI</em>.
+                </p>
+<ul class="tag-list">
+<li><span class="tag tag--venue">CORE A*</span></li>
+</ul>
+</div>
+<div class="pub-item__links">
+<a href="https://dl.acm.org/doi/full/10.1145/3706598.3713779">DOI</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2025</span>
+<div>
+<h3 class="pub-item__title">
+                  A Fuzzy Logic-Based Approach to Predict Human Interaction by
+                  Functional Near-Infrared Spectroscopy
+                </h3>
+<p class="pub-item__meta">
+                  X. Jiang, L. Ou, Y. Chen, N. Ao, Y.-C. Chang,
+                  <span class="self">T. Do</span>, C.-T. Lin.
+                  <em>IEEE Transactions on Fuzzy Systems</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/abstract/document/10849810">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2024</span>
+<div>
+<h3 class="pub-item__title">
+                  The distinction between object recognition and object
+                  identification in brain connectivity for brain-computer
+                  interface applications
+                </h3>
+<p class="pub-item__meta">
+                  D. Leong, <span class="self">T. Do</span>, C.-T. Lin.
+                  <em>IEEE Transactions on Cognitive and Developmental
+                    Systems</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/abstract/document/10570151/">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2024</span>
+<div>
+<h3 class="pub-item__title">
+                  Multimodal fusion for anticipating human decision performance
+                </h3>
+<p class="pub-item__meta">
+                  X. T. Tran, <span class="self">T. Do</span>, N. R. Pal, T.-P.
+                  Jung, C.-T. Lin. <em>Scientific Reports</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://www.nature.com/articles/s41598-024-63651-2">Open access</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2023</span>
+<div>
+<h3 class="pub-item__title">
+                  An EEG-based Experiment on VR Sickness and Postural
+                  Instability While Walking in Virtual Environments
+                </h3>
+<p class="pub-item__meta">
+                  C. Cortes, C.-T. Lin, <span class="self">T. Do</span>, H.-T.
+                  Chen. <em>IEEE Virtual Reality</em>.
+                </p>
+<ul class="tag-list">
+<li><span class="tag tag--venue">CORE A*</span></li>
+</ul>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/document/10108449">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2022</span>
+<div>
+<h3 class="pub-item__title">
+                  Effects of multisensory distractor interference on attentional
+                  driving
+                </h3>
+<p class="pub-item__meta">
+                  C.-T. Lin, Y. Tian, Y.-K. Wang, <span class="self">T. Do</span>,
+                  Y.-L. Chang, J.-T. King, K.-C. Huang, L.-D. Liao.
+                  <em>IEEE Transactions on Intelligent Transportation Systems</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/abstract/document/9737406">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2021</span>
+<div>
+<h3 class="pub-item__title">
+                  Human brain dynamics in active spatial navigation
+                </h3>
+<p class="pub-item__meta">
+<span class="self">T. Do</span>*, C.-T. Lin, K. Gramann.
+                  <em>Scientific Reports</em>.
+                </p>
+<details class="bibtex">
+<summary>BibTeX</summary>
+<pre><code>@article{do2021navigation,
+  title   = {Human brain dynamics in active spatial navigation},
+  author  = {Do, Tien-Thong Nguyen and Lin, Chin-Teng and Gramann, Klaus},
+  journal = {Scientific Reports},
+  volume  = {11},
+  year    = {2021},
+  doi     = {10.1038/s41598-021-92246-4}
+}</code></pre>
+</details>
+</div>
+<div class="pub-item__links">
+<a href="https://www.nature.com/articles/s41598-021-92246-4">Open access</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2021</span>
+<div>
+<h3 class="pub-item__title">
+                  Retrosplenial segregation reflects the navigation load during
+                  ambulatory movement
+                </h3>
+<p class="pub-item__meta">
+<span class="self">T. Do</span>, T.-P. Jung, C.-T. Lin.
+                  <em>IEEE Transactions on Neural Systems and Rehabilitation
+                    Engineering</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/document/9349113">IEEE Xplore</a>
+</div>
+</li>
+<li class="pub-item">
+<span class="pub-item__year">2021</span>
+<div>
+<h3 class="pub-item__title">
+                  Direct-Sense Brain–Computer Interfaces and Wearable Computers
+                </h3>
+<p class="pub-item__meta">
+                  C.-T. Lin, <span class="self">T. Do</span>.
+                  <em>IEEE Transactions on Systems, Man, and Cybernetics:
+                    Systems</em>.
+                </p>
+</div>
+<div class="pub-item__links">
+<a href="https://ieeexplore.ieee.org/document/9302890">IEEE Xplore</a>
+</div>
+</li>
+</ul>
+<p class="section__footer">
+<a class="btn btn--outline" href="https://scholar.google.com/citations?user=8_nErXAAAAAJ">
+              All publications on Google Scholar
+            </a>
+</p>
+</div>
+</section>
+<!-- ============================ RECENT ACTIVITIES ============================ -->
+<section aria-labelledby="activities-title" class="section section--alt" id="activities">
+<div class="container reveal">
+<span class="section__eyebrow">Recent activities</span>
+<h2 id="activities-title">Recent activities</h2>
+<ul class="activity-list">
+<li class="activity-item"><span class="activity-item__year">2026</span><p>Work begins on the <strong>Human–AI Teaming Framework for Decision Superiority</strong>, funded through the ASCA Emerging and Disruptive Technologies program ($3.2M, 2026–2028).</p></li>
+<li class="activity-item"><span class="activity-item__year">2026</span><p><strong>“Neuro-Cognitive Reward Modeling for Human-Centered Autonomous Vehicle Control”</strong> accepted at CVPR.</p></li>
+<li class="activity-item"><span class="activity-item__year">2025</span><p>The <strong>ARC Research Hub for Human–Robot Teaming for Sustainable and Resilient Construction</strong> commenced ($5.3M + industry contribution, 2025–2030).</p></li>
+<li class="activity-item"><span class="activity-item__year">2025</span><p>The ARC Discovery Project <strong>“Mind-reading AI to Translate Silent Speech into Words”</strong> commenced ($623,613.00, 2025–2027).</p></li>
+<li class="activity-item"><span class="activity-item__year">2025</span><p><strong>Xuan The Tran</strong> and <strong>Charles Zhou</strong> completed their PhDs.</p></li>
+<li class="activity-item"><span class="activity-item__year">2025</span><p>Invited talk, <a href="https://www.iec.ch/academy/webinars/brain-computer-interfaces-bci-standardization-human-augmentation" rel="noopener" target="_blank"><strong>“From Lab to Life: Making Brain-Computer Interfaces Practical for Daily Use”</strong></a>, at the JTC 1/SC 43 &amp; JSYC BDC Joint Symposium on BCI Standardisation for Human Augmentation.</p></li>
+<li class="activity-item"><span class="activity-item__year">2025</span><p>Two papers at A* venues: silent-speech pretraining at <strong>ACM Multimedia</strong>, and AEGIS at <strong>ACM CHI</strong>.</p></li>
+<li class="activity-item"><span class="activity-item__year">2024</span><p>Invited talk, <strong>“Integrating Brain-Computer Interfaces with Mobile Navigation”</strong>, at the ISO/IEC JTC 1/SC 43 Brain-Computer Interface Symposium in Sydney.</p></li>
+<li class="activity-item"><span class="activity-item__year">2023</span><p>Commenced as <strong>Senior Lecturer at the University of Technology Sydney</strong> in November 2023.</p></li>
+<li class="activity-item"><span class="activity-item__year">2023</span><p>Appointed <strong>Co-Director of the Human-centric AI Centre</strong> in March 2023.</p></li>
+<li class="activity-item"><span class="activity-item__year">2023</span><p>Phase 3 of <strong>Miniature Physiological Sensors and Decoders for Brain-Robot Interaction</strong>, supported by the Australian Department of Defence ($3.8M), commenced.</p></li>
+</ul>
+</div>
+</section>
+<!-- ============================ SUPERVISION ============================
+           Reframed from a group page to a supervision record: the current
+           students continue at UTS with their principal supervisors, so this
+           section shows track record rather than a lab you would be joining.
+           ====================================================================== -->
+<section aria-labelledby="supervision-title" class="section" id="supervision">
+<div class="container reveal">
+<span class="section__eyebrow">Students &amp; alumni</span>
+<h2 id="supervision-title">Students &amp; alumni</h2>
+<p class="section__intro section__intro--wide">Selected current research students and alumni I have supervised or co-supervised.</p>
+<h3 class="roster-group__title">Current students</h3>
+<ul class="roster roster--compact">
+<li><span class="roster__name">Manh-Dat Nguyen</span><span class="roster__detail">2024–</span></li>
+<li><span class="roster__name">Trung Le</span><span class="roster__detail">2024–</span></li>
+<li><span class="roster__name">Cheng-you Lu</span><span class="roster__detail">2023–</span></li>
+<li><span class="roster__name">Beining Cao</span><span class="roster__detail">2023–</span></li>
+<li><span class="roster__name">Xiaowei Jiang</span><span class="roster__detail">2023–</span></li>
+<li><span class="roster__name">Charlie Tsai</span><span class="roster__detail">2023–</span></li>
+</ul>
+<h3 class="roster-group__title">Alumni</h3>
+<ul class="roster roster--compact">
+<li><span class="roster__name">Xuan The Tran</span><span class="roster__detail">PhD 2021–2025 · Lecturer, Vietnam Maritime University</span></li>
+<li><span class="roster__name">Charles Zhou</span><span class="roster__detail">PhD 2021–2025 · Postdoctoral Researcher, UTS</span></li>
+<li><span class="roster__name">Daniel Leong</span><span class="roster__detail">PhD 2019–2024 · Postdoctoral Researcher, UTS</span></li>
+<li><span class="roster__name">Yanqiu Tian</span><span class="roster__detail">PhD 2019–2023 · Postdoctoral Researcher, Macquarie University</span></li>
+<li><span class="roster__name">Linh Le</span><span class="roster__detail">Postdoctoral researcher 2023–2025 · Mila Institute, McGill University</span></li>
+<li><span class="roster__name">Nhut Minh Duong</span><span class="roster__detail">Honours 2025–2026</span></li>
+</ul>
+</div>
+</section>
+<!-- ============================ FUNDING ============================ -->
+<!-- ============================ JOIN ============================ -->
+<section aria-labelledby="join-title" class="section join" id="phd-opportunities">
+<div class="container reveal">
+<span class="section__eyebrow">Prospective students</span>
+<h2 id="join-title">Interested in doing a PhD with me at UWA?</h2>
+<p class="section__intro section__intro--wide">
+      I welcome enquiries from strong students interested in artificial intelligence, machine learning and brain–computer interfaces. Candidates with backgrounds in computer science, AI, data science or related fields are encouraged, particularly those with demonstrated research potential through a strong thesis, publications or substantial AI/ML projects. Recruitment is primarily through competitive <a href="https://www.uwa.edu.au/study/scholarships-and-fees/scholarships/hdr-scholarships" target="_blank" rel="noopener noreferrer">UWA scholarships</a> and eligible external or government-sponsored scholarships.
+    </p>
+<div class="join__columns join__columns--single">
+<div class="join__block application-panel">
+<span class="application-panel__eyebrow">Initial enquiry</span>
+<h3>Send a concise expression of interest</h3>
+<p>Please include your <strong>CV</strong>, <strong>academic transcripts</strong>, a short paragraph on your research interests and fit.</p>
+<p class="application-panel__subject">Email subject: PhD EOI — [Your Name] — [Broad Research Area]</p>
+<button class="btn btn--primary btn--full js-email-link" data-subject="PhD EOI — [Your Name] — [Broad Research Area]" type="button">Contact me about PhD study</button>
+<p class="fine-print application-panel__note">Scholarship availability and deadlines are determined by UWA or the relevant external sponsor. A supervision discussion does not constitute a scholarship offer.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================ CONTACT ============================ -->
+<section aria-labelledby="contact-title" class="section section--alt" id="contact">
+<div class="container contact__grid reveal">
+<div>
+<span class="section__eyebrow">Contact</span>
+<h2 id="contact-title">Contact &amp; collaboration</h2>
+<p class="section__intro">For research collaboration, academic enquiries or prospective PhD supervision, please contact me by email.</p>
+<ul class="contact__details">
+<li>
+<span class="contact__label">Email</span>
+<span class="contact__email-row" id="email-contact">
+<button class="copy-btn js-email-reveal" type="button">Show email</button>
+</span>
+</li>
+<li>
+<span class="contact__label">From Sep 2026</span>
+<span>
+                  Computer Science and Software Engineering · School of Physics,
+                  Mathematics and Computing · The University of Western Australia · Perth, Australia
+                </span>
+</li>
+<li>
+<span class="contact__label">Current affiliation</span>
+<span>University of Technology Sydney · Sydney, Australia</span>
+</li>
+</ul>
+</div>
+<aside>
+<h3>Academic profiles</h3>
+<div class="contact__links">
+<a href="https://scholar.google.com/citations?user=8_nErXAAAAAJ">Google Scholar</a>
+<a href="https://profiles.uts.edu.au/Thomas.Do">UTS profile</a>
+<a href="https://www.researchgate.net/profile/Tien_Thong_Do">ResearchGate</a>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container site-footer__inner">
+<p>
+          © <span data-year="">2026</span> Thomas Do · Academic website
+        </p>
+<p>Last updated: <time datetime="2026-08-08">8 August 2026</time></p>
+</div>
+</footer>
+<script>(() => {
+  const header = document.querySelector(".site-header");
+  const nav = document.querySelector(".nav");
+  const toggle = document.querySelector(".nav__toggle");
+  const navLinks = Array.from(
+    document.querySelectorAll('.nav__list a[href^="#"]')
+  );
+  const faqButtons = document.querySelectorAll(".faq__question");
+  const revealEls = document.querySelectorAll(".reveal");
+
+  /* —— Sticky header elevation —— */
+  const onScroll = () => {
+    if (!header) return;
+    header.classList.toggle("is-scrolled", window.scrollY > 8);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* —— Mobile nav —— */
+  const setNavOpen = (open) => {
+    if (!nav || !toggle) return;
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      setNavOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setNavOpen(false);
+      if (toggle && document.activeElement?.closest(".nav")) toggle.focus();
+    }
+  });
+
+  /* Close the menu when tapping outside it */
+  document.addEventListener("click", (event) => {
+    if (!nav || !nav.classList.contains("is-open")) return;
+    if (!event.target.closest(".nav")) setNavOpen(false);
+  });
+
+  /* —— Smooth scroll with sticky-header offset —— */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (event) => {
+      const id = anchor.getAttribute("href");
+      if (!id || id === "#") return;
+
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      event.preventDefault();
+
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      // Home (#top) is the sticky header — scroll to document top instead
+      const top =
+        id === "#top"
+          ? 0
+          : target.getBoundingClientRect().top +
+            window.scrollY -
+            (header ? header.offsetHeight + 12 : 0);
+
+      window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
+
+      // Move keyboard focus with the viewport, or the next Tab starts
+      // from the top of the document again
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+
+      try {
+        history.pushState(null, "", id === "#top" ? location.pathname : id);
+      } catch (error) {
+        // Some preview/sandbox contexts restrict history updates; scrolling still works.
+      }
+    });
+  });
+
+  /* —— Active section highlighting —— */
+  const sectionIds = navLinks
+    .map((link) => link.getAttribute("href"))
+    .filter((href) => href && href.length > 1 && href !== "#top");
+
+  const sections = sectionIds
+    .map((id) => document.querySelector(id))
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const visible = new Set();
+
+    const setCurrent = () => {
+      // Topmost visible section wins
+      const active = sections.find((section) => visible.has(section));
+      navLinks.forEach((link) => {
+        const isCurrent =
+          active && link.getAttribute("href") === `#${active.id}`;
+        if (isCurrent) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) visible.add(entry.target);
+          else visible.delete(entry.target);
+        });
+        setCurrent();
+      },
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => spy.observe(section));
+  }
+
+  /* —— FAQ accordion —— */
+  faqButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      const panelId = button.getAttribute("aria-controls");
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      faqButtons.forEach((other) => {
+        if (other === button) return;
+        other.setAttribute("aria-expanded", "false");
+        const otherId = other.getAttribute("aria-controls");
+        const otherPanel = otherId ? document.getElementById(otherId) : null;
+        if (otherPanel) otherPanel.classList.remove("is-open");
+      });
+
+      button.setAttribute("aria-expanded", String(!expanded));
+      if (panel) panel.classList.toggle("is-open", !expanded);
+    });
+  });
+
+  /* —— Copy to clipboard —— */
+  document.querySelectorAll("[data-copy]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const value = button.getAttribute("data-copy");
+      const original = button.textContent;
+      try {
+        await navigator.clipboard.writeText(value);
+        button.textContent = "Copied";
+      } catch {
+        button.textContent = value;
+      }
+      button.classList.add("is-copied");
+      setTimeout(() => {
+        button.textContent = original;
+        button.classList.remove("is-copied");
+      }, 2000);
+    });
+  });
+
+  /* —— Footer year —— */
+  const year = document.querySelector("[data-year]");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  /* —— Scroll reveal —— */
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealEls.forEach((el) => observer.observe(el));
+  } else {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+  }
+})();
+</script>
+<script>
+(function () {
+  const codes = [116,104,111,109,97,115,46,116,116,100,111,64,103,109,97,105,108,46,99,111,109];
+  const address = codes.map(c => String.fromCharCode(c)).join('');
+  document.querySelectorAll('.js-email-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const subject = btn.dataset.subject || '';
+      window.location.href = 'mailto:' + address + '?subject=' + encodeURIComponent(subject);
+    });
+  });
+  document.querySelectorAll('.js-email-reveal').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.closest('.contact__email-row');
+      const a = document.createElement('a');
+      a.href = 'mailto:' + address;
+      a.textContent = address;
+      wrap.replaceChildren(a);
+    });
+  });
+})();
+</script>
+</body>
+</html>
